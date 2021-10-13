@@ -4,16 +4,16 @@ import java.util.regex.PatternSyntaxException;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class contadorEmocao {
+class ContadorEmocao {
     public void getEmocao(String frase) {
         frase = frase.replaceAll("[0-9]","0");
-        frase = feliz(frase);
-        frase = triste(frase);
-        calcular(frase);
+        frase = getFeliz(frase);
+        frase = getTriste(frase);
+        getaCalcular(frase);
     }
 
 
-    private String feliz(String frase)
+    private String getFeliz(String frase)
     {
         String str = frase;
         String str2;
@@ -21,7 +21,7 @@ public class contadorEmocao {
         str2 = str.replaceAll(pattern, "1");
         return str2;
     }
-    private String triste(String frase)
+    private String getTriste(String frase)
     {
         String str = frase;
         String str2;
@@ -30,7 +30,7 @@ public class contadorEmocao {
         return str2;
     }
 
-    private void calcular(String frase)
+    private void getaCalcular(String frase)
     {
         Integer contador = 0;
         for (int i = 0; i < frase.length()  ; i++){
